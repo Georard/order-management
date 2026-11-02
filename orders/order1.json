@@ -1,0 +1,25 @@
+{
+  "customerData": {
+    "firstName" : "Korneli",
+    "lastName" : "Eliso",
+    "email" : "korneli.eliso@gmail.com",
+    "phoneNumber" : "88005553535"
+  },
+  "shoppingCart" : [
+    {
+      "productCode" : "57FYUF795JI",
+      "quantity": 2,
+      "unit": "pcs"
+    },
+    {
+      "productCode" : "8305BUCR7495",
+      "quantity": 1.25,
+      "unit": "kg"
+    },
+    {
+      "productCode" : "305UFO305GOE",
+      "quantity": 3,
+      "unit": "l"
+    }
+  ]
+}

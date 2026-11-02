@@ -1,0 +1,20 @@
+{
+  "customerData": {
+    "firstName" : "Hayat",
+    "lastName" : "Karen",
+    "email" : "hayat.karen@gmail.com",
+    "phoneNumber" : "987654321"
+  },
+  "shoppingCart" : [
+    {
+      "productCode" : "67WL43YU08BK",
+      "quantity": 5,
+      "unit": "pcs"
+    },
+    {
+      "productCode" : "VOEL4038UIQW",
+      "quantity": 3,
+      "unit": "kg"
+    }
+  ]
+}
