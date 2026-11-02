@@ -12,15 +12,18 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
-// wczytanie wszystkich plików o rozszerzeniu .json z katalogu (Zadanie 4)
+/**
+ * Provides functionalities to find all .json files in the directory and read them to the OrderRequest
+ */
 public class OrderReader {
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     /**
-     * Pomaga otrzymać wszystkie ścieżki do plików .json w wybranym katalogu
-     * @param directoryPath ścieżka do katalogu z plikami .json do wczytania
-     * @return listę ścieżek do wszystkich plików .json w katalogu
+     * Helps retrieve all paths to .json files in a selected directory
+     * @param directoryPath path to the directory containing .json files to be loaded
+     * @throws RuntimeException when an error occurs while searching the directory
+     * @return a list of paths to all .json files in a directory or empty list if there is no directory with such name
      */
     public List<Path> findJsonFiles(String directoryPath) {
         Path dir = Paths.get(directoryPath);
@@ -40,20 +43,21 @@ public class OrderReader {
                     .filter(path -> path.getFileName().toString().toLowerCase().endsWith(".json"))
                     .toList();
         } catch (IOException e) {
-            throw new RuntimeException("Wystapil blad podczas przeszukiwania katalogu: " + e.getMessage());
+            throw new RuntimeException("Wystąpił błąd podczas przeszukiwania katalogu: " + e.getMessage());
         }
     }
 
     /**
-     *
-     * @param jsonFilePath ścieżka do konkretnego pliku .json
-     * @return zwraca żądanie o zamówienie
+     * Reads orders from .json files to the OrderRequests
+     * @param jsonFilePath path to a specific .json file
+     * @throws RuntimeException when an exception during deserialization proces occurs
+     * @return returns a request for an order
      */
     public OrderRequest readOrder(Path jsonFilePath) {
         try {
             return objectMapper.readValue(jsonFilePath, OrderRequest.class);
         } catch (JacksonException e) {
-            throw new RuntimeException("Wystapil blad podczas deserializacji pliku: "
+            throw new RuntimeException("Wystąpił błąd podczas deserializacji pliku: "
                     + jsonFilePath.getFileName() + ": " + e.getMessage(), e);
         }
     }

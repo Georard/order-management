@@ -5,6 +5,9 @@ import tools.jackson.databind.ObjectMapper;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Class responsible for creating order requests
+ */
 public class OrderRequest {
     private CustomerData customerData;
     private List<Product> shoppingCart;
@@ -14,7 +17,9 @@ public class OrderRequest {
     }
 
     /**
-     * Przydziela indywidualny numer zamówienia
+     * It assigns an individual order number consisting of the customer's initials,
+     * the quantity of items purchased,
+     * and a unique hexadecimal hash code generated based on the order data.
      */
     public void assignDeterministicOrderNumber(){
         // tworzy indywidualny skrót w zależności od danych zamówienia
