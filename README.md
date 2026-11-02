@@ -13,7 +13,7 @@ Projekt zrealizowany w ramach kursu Narzędzia Programistyczne (Politechnika Wro
 
 Aplikacja jest w pełni skonteneryzowana. Do jej uruchomienia nie jest wymagane środowisko Java ani Maven, wystarczy zainstalowany Docker.
 
-1. Upewnij się, że w folderze `./orders` (obok pliku `compose.yaml`) znajdują się pliki zamówień z rozszerzeniem `.json`.
+1. Upewnij się, że w folderze `./user-orders` (obok pliku `compose.yaml`) znajdują się pliki zamówień z rozszerzeniem `.json`.
 2. Uruchom kontener za pomocą polecenia:
    ```bash
    docker compose up
